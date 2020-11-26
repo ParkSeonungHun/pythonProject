@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'taggit.apps.TaggitAppConfig',
     'taggit_templatetags2',
     'widget_tweaks',
+    'sorl.thumbnail',
 
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
@@ -131,6 +132,11 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 # shkim
+
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+)
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
